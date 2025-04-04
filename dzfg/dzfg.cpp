@@ -4,21 +4,21 @@
 #include <algorithm>
 #include <string>
 #include <limits>
+#include <Windows.h>
 
 using namespace std;
 
-// Структура для хранения контакта
+// Структура 
 struct Contact {
     string name;
     string phone;
     string email;
 };
 
-// Функция для отображения меню
-void displayMenu() {
-}
+//отображения меню
 
-// Функция для добавления контакта
+
+//добавления контакта
 void addContact(vector<Contact>& contacts) {
     Contact newContact;
     cout << "\nВведите имя: ";
@@ -32,7 +32,7 @@ void addContact(vector<Contact>& contacts) {
     cout << "Контакт добавлен!\n";
 }
 
-// Функция для отображения всех контактов
+//отображения всех контактов
 void displayContacts(const vector<Contact>& contacts) {
     if (contacts.empty()) {
         cout << "\nСписок контактов пуст.\n";
@@ -47,7 +47,7 @@ void displayContacts(const vector<Contact>& contacts) {
     }
 }
 
-// Функция для удаления контакта
+// удаления контакта
 void deleteContact(vector<Contact>& contacts) {
     displayContacts(contacts);
     if (contacts.empty()) return;
@@ -65,7 +65,7 @@ void deleteContact(vector<Contact>& contacts) {
     cout << "Контакт удален!\n";
 }
 
-// Функция для поиска контакта
+//поиска контакта
 void findContact(const vector<Contact>& contacts) {
     string searchTerm;
     cout << "\nВведите имя, телефон или email для поиска: ";
@@ -88,7 +88,7 @@ void findContact(const vector<Contact>& contacts) {
     }
 }
 
-// Функция для изменения контакта
+// изменения контакта
 void editContact(vector<Contact>& contacts) {
     displayContacts(contacts);
     if (contacts.empty()) return;
@@ -126,7 +126,7 @@ void editContact(vector<Contact>& contacts) {
     cout << "Контакт изменен!\n";
 }
 
-// Функция для сохранения контактов в файл
+// сохранения контактов в файл
 void saveToFile(const vector<Contact>& contacts, const string& filename = "contacts.txt") {
     ofstream outFile(filename);
     if (!outFile) {
@@ -142,7 +142,7 @@ void saveToFile(const vector<Contact>& contacts, const string& filename = "conta
     cout << "Контакты сохранены в файл '" << filename << "'\n";
 }
 
-// Функция для загрузки контактов из файла
+// загрузки контактов из файла
 void loadFromFile(vector<Contact>& contacts, const string& filename = "contacts.txt") {
     ifstream inFile(filename);
     if (!inFile) {
@@ -169,6 +169,7 @@ void loadFromFile(vector<Contact>& contacts, const string& filename = "contacts.
     cout << "Контакты загружены из файла '" << filename << "'\n";
 }
 
-int main() {
-    
+int main() 
+{
+    setlocale(LC_ALL, "");
 }
